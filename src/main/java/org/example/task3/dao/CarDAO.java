@@ -1,6 +1,6 @@
 package org.example.task3.dao;
 
-import org.example.task3.Car;
+import org.example.task3.entity.Car;
 import org.example.task3.enums.Producer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

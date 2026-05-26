@@ -1,8 +1,9 @@
-package org.example.task3;
+package org.example.task3.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.task3.dao.CarDAO;
 import org.example.task3.dto.CarDTO;
+import org.example.task3.entity.Car;
 import org.example.task3.enums.Producer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

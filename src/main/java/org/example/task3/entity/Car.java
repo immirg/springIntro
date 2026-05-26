@@ -1,4 +1,4 @@
-package org.example.task3;
+package org.example.task3.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

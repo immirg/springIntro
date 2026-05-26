@@ -1,10 +1,12 @@
-package org.example.task3;
+package org.example.task3.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.task3.dto.CarDTO;
+import org.example.task3.entity.Car;
 import org.example.task3.enums.Producer;
+import org.example.task3.service.CarService;
 import org.example.task3.views.Views;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
