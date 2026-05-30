@@ -1,21 +1,24 @@
-package org.example.task3.controller;
+package org.example.task4.tsk1.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.example.task3.dto.CarDTO;
-import org.example.task3.entity.Car;
-import org.example.task3.enums.Producer;
-import org.example.task3.service.CarService;
-import org.example.task3.views.Views;
+import org.example.task4.tsk1.dto.CarDTO;
+import org.example.task4.tsk1.entity.Car;
+import org.example.task4.tsk1.enums.Producer;
+import org.example.task4.tsk1.service.CarService;
+import org.example.task4.tsk1.views.Views;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 public class CarController {
+
     private final CarService carService;
 
     @GetMapping("/")
@@ -30,7 +33,9 @@ public class CarController {
     }
 
     @PostMapping("/cars")
-    public ResponseEntity<Void> saveCar(@RequestBody @Valid Car car) {
+    public ResponseEntity<Void> saveNewCar(@RequestParam String model, @RequestParam String producer, @RequestParam double power, @RequestParam("image") MultipartFile file) throws IOException {
+        file.transferTo(new File(System.getProperty("user.home") + File.separator + "pictures" + File.separator + file.getOriginalFilename()));
+        Car car = new Car(model, producer, power, file.getOriginalFilename());
         return carService.addNewCar(car);
     }
 

@@ -1,14 +1,10 @@
-package org.example.task3.entity;
+package org.example.task4.tsk1.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.task3.enums.Model;
-import org.example.task3.enums.Producer;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.EnumType;
 import jakarta.validation.constraints.NotNull;
 
 @Getter
@@ -27,11 +23,12 @@ public class Car {
     @Min(60)
     @Max(650)
     private double power;
+    private String imageName;
 
-    public Car(Integer id, String model, String producer, double power) {
-        this.id = id;
+    public Car(String model, String producer, double power, String imageName) {
         this.model = model;
         this.producer = producer;
         this.power = power;
+        this.imageName = imageName;
     }
 }

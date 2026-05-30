@@ -1,4 +1,4 @@
-package org.example.task3.dto;
+package org.example.task4.tsk2.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
